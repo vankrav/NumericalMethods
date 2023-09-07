@@ -5,11 +5,10 @@ def f(x):
 
 
 def start_appox(start, stop):
-
     while True:
-        x = (random.randrange(start, stop), random.randrange(start, stop))
-        if f(x[0]) * f(x[1]) < 0:
-            return x
+        x0, x1 = random.randrange(start, stop), random.randrange(start, stop)
+        if f(x0) * f(x1) < 0:
+            return x0, x1
 
 
 def dih(x0, x1, e, max_iteration, f):
@@ -33,7 +32,7 @@ def dih(x0, x1, e, max_iteration, f):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    x0, x1 = 0, 2.5
+    x0, x1 = start_appox(-10000, 10000)
     e = 0.001
 
     print(dih(x0, x1, e, 500, f))
