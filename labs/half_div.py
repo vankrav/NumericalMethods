@@ -34,5 +34,10 @@ def dih(x0, x1, e, max_iteration, f):
 if __name__ == '__main__':
     x0, x1 = start_appox(-10000, 10000)
     e = 0.001
+    root = dih(x0, x1, e, 500, f)
 
-    print(dih(x0, x1, e, 500, f))
+    if root is not None:
+        print(f"Приближенный корень: {root}")
+    else:
+        print("Метод не сошелся к корню.")
+    print()
